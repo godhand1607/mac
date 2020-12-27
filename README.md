@@ -1,5 +1,5 @@
 # mac :computer:
-Personal guide for setting up a mac
+Personal guide for setting up a mac :computer:
 
 ## Step 1: Install macOS
 I highly recommend to start fresh with a clean install of the latest version of macOS. Check [here](https://support.apple.com/en-ph/HT204904) for the latest guide on how to do so.
