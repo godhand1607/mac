@@ -146,6 +146,14 @@ mas install 803453959
 mas install 497799835
 # Magnet
 mas install 441258766
+# The Unarchiver
+mas install 425424353
+# Numbers
+mas install 409203825
+# Keynote
+mas install 409183694
+# Pages
+mas install 409201541
 ```
 
 ## Step 10: Configure git
@@ -155,7 +163,9 @@ mas install 441258766
 
 
 ## Step 11: Configure editors
-1. Visual Studio Code - Sync settings via https://code.visualstudio.com/docs/editor/settings-sync
+1. Visual Studio Code
+    - Sync settings via https://code.visualstudio.com/docs/editor/settings-sync
+    - https://shageevan.medium.com/vs-codes-in-built-terminal-is-slow-or-laggy-on-macos-big-sur-d5867a7d9771
 2. Sublime Text
 
 

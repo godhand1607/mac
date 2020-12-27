@@ -43,7 +43,11 @@ cask "visual-studio-code"
 cask "vlc"
 cask "zoom"
 mas "Apple Configurator 2", id: 1037126344
+mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Skitch", id: 425955336
 mas "Slack", id: 803453959
+mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
