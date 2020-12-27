@@ -103,11 +103,23 @@ alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias etchosts="sudo code /etc/hosts"
 
+# iterm shell integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Brew completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # "pure" theme - https://github.com/sindresorhus/pure#oh-my-zsh
 autoload -U promptinit; promptinit
 prompt pure
+
+# asdf
+. /usr/local/opt/asdf/asdf.sh
 
 # "colorls"
 source $(dirname $(gem which colorls))/tab_complete.sh
