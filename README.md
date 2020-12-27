@@ -1,4 +1,4 @@
-# mac
+# mac :computer:
 Personal guide for setting up a mac
 
 ## Step 1: Install macOS
