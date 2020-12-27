@@ -70,9 +70,10 @@ brew install m-cli
     ```
 2. Configure `pure` integration to `oh-my-zsh`
     - https://github.com/sindresorhus/pure#oh-my-zsh
-3. Install `font-hack-nerd-font`
+3. Install fonts
     ```sh
     brew install font-hack-nerd-font --cask
+    brew install font-inconsolata-dz-for-powerline --cask
     ```
 4. Install iTerm Profile
     - Filename: `itermprofiles.json`
@@ -154,8 +155,8 @@ mas install 441258766
 
 
 ## Step 11: Configure editors
-1. VSCode
-2. Sublime
+1. Visual Studio Code - Sync settings via https://code.visualstudio.com/docs/editor/settings-sync
+2. Sublime Text
 
 
 ## Step 12: Configure browsers
