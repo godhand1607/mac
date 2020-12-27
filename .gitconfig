@@ -1,0 +1,17 @@
+# This is Git's per-user configuration file.
+[user]
+    name = godhand1607
+    email = <replace_email_here>
+[color]
+    # Enable colors in color-supporting terminals
+    ui = auto
+[core]
+    excludesfile = ~/.gitignore_global
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
