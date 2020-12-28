@@ -139,6 +139,7 @@ brew install vlc --cask
 
 # gems
 gem install colorls
+sudo gem install cocoapods
 ```
 
 ## Step 9: Install App Store Apps
@@ -180,8 +181,6 @@ mas install 409201541 # Pages
     - Set environment variables
         ```sh
         # ~/.zshrc
-        export ANDROID_HOME="/usr/local/share/android-sdk"
-        export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
         export ANDROID_HOME="/usr/local/share/android-sdk"
         export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
         export PATH=$ANDROID_HOME/tools:$PATH
