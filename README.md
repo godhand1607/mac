@@ -1,5 +1,5 @@
 # mac :computer:
-Personal guide for setting up a mac :computer:
+Personal guide for setting up a mac
 
 ## Step 1: Install macOS
 I highly recommend to start fresh with a clean install of the latest version of macOS. Check [here](https://support.apple.com/en-ph/HT204904) for the latest guide on how to do so.
@@ -173,6 +173,8 @@ mas install 409201541
 
 
 ## Step 13: System Settings and Background
+- https://github.com/rgcr/m-cli
+- https://github.com/herrbischoff/awesome-macos-command-line
 
 
 ## Step 14: Email and Calendar
