@@ -190,6 +190,27 @@ mas install 409201541 # Pages
 
 
 ## Step 13: Configure browsers
+- Safari
+    - Plugins:
+        - 1Password
+- Google Chrome
+    - Plugins:
+        - 1Password
+        - Adblock Plus - free ad blocker
+        - JSONView
+        - React Developer tools
+        - Redux DevTools
+        - Panda
+        - Octotree
+        - Eye Dropper
+- Brave
+    - Plugins:
+        - 1Password
+- Firefox Developer Edition
+    - Plugins:
+        - 1Password
+        - Facebook Container
+        - Firefox Multi-Account Containers
 
 
 ## Step 14: System Settings and Background
