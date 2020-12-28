@@ -131,8 +131,6 @@ alias cls="colorls"
 # android
 export ANDROID_HOME="/usr/local/share/android-sdk"
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-export ANDROID_HOME="/usr/local/share/android-sdk"
-export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/build-tools/30.0.3:$PATH
