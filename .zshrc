@@ -125,11 +125,17 @@ prompt pure
 source $(dirname $(gem which colorls))/tab_complete.sh
 alias cls="colorls"
 
-# java and android
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# java via asdf
+. ~/.asdf/plugins/java/set-java-home.zsh
+
+# android
 export ANDROID_HOME="/usr/local/share/android-sdk"
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_HOME="/usr/local/share/android-sdk"
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/build-tools/30.0.3:$PATH
 
 # ssh theme
 function tabc() {

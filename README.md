@@ -47,20 +47,25 @@ brew install m-cli
     # Add to shell
     echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
     ```
-1. Install `nodejs` and `python` plugins
+1. Install asdf plugins
     ```sh
     asdf plugin-add nodejs
     asdf plugin-add python
+    asdf plugin-add java https://github.com/halcyon/asdf-java.git
     ```
 2. Install latest (stable) versions
     ```sh
     asdf install nodejs latest:14
     asdf install python latest
+    # Java 8 is required for Cordova/Ionic
+    asdf install java adoptopenjdk-8.0.275+1
     ```
-3. Set global plugin versions to `system`
+3. Set global plugin versions
     ```sh
     asdf global nodejs system
     asdf global python system
+    # Add to .zshcrc - . ~/.asdf/plugins/java/set-java-home.zsh
+    asdf global java adoptopenjdk-8.0.275+1
     ```
 
 ## Step 7: Install zsh themes and plugins
@@ -102,6 +107,8 @@ brew install postico --cask
 brew install mysqlworkbench --cask
 brew install ngrok --cask
 brew install postman --cask
+brew install gradle
+brew install android-sdk --cask
 
 # text editors
 brew install visual-studio-code --cask
@@ -136,24 +143,15 @@ gem install colorls
 
 ## Step 9: Install App Store Apps
 ```sh
-# Skitch
-mas install 425955336
-# Apple Configurator 2
-mas install 1037126344
-# Slack
-mas install 803453959
-# Xcode
-mas install 497799835
-# Magnet
-mas install 441258766
-# The Unarchiver
-mas install 425424353
-# Numbers
-mas install 409203825
-# Keynote
-mas install 409183694
-# Pages
-mas install 409201541
+mas install 425955336 # Skitch
+mas install 1037126344 # Apple Configurator 2
+mas install 803453959 # Slack
+mas install 497799835 # Xcode
+mas install 441258766 # Magnet
+mas install 425424353 # The Unarchiver
+mas install 409203825 # Numbers
+mas install 409183694 # Keynote
+mas install 409201541 # Pages
 ```
 
 ## Step 10: Configure git
@@ -169,15 +167,38 @@ mas install 409201541
 2. Sublime Text
 
 
-## Step 12: Configure browsers
+## Step 12: Setup developer tools
+1. Setup java/android development tools
+    - Install tools
+        ```sh
+        # Install
+        sdkmanager "tools" "platform-tools" "extras;android;m2repository" "extras;google;m2repository" "build-tools;30.0.3" "platforms;android-30"
+
+        # Accept licenses
+        sdkmanager --licenses
+        ```
+    - Set environment variables
+        ```sh
+        # ~/.zshrc
+        export ANDROID_HOME="/usr/local/share/android-sdk"
+        export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+        export ANDROID_HOME="/usr/local/share/android-sdk"
+        export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+        export PATH=$ANDROID_HOME/tools:$PATH
+        export PATH=$ANDROID_HOME/platform-tools:$PATH
+        export PATH=$ANDROID_HOME/build-tools/30.0.3:$PATH
+        ```
 
 
-## Step 13: System Settings and Background
+## Step 13: Configure browsers
+
+
+## Step 14: System Settings and Background
 - https://github.com/rgcr/m-cli
 - https://github.com/herrbischoff/awesome-macos-command-line
 
 
-## Step 14: Email and Calendar
+## Step 15: Email and Calendar
 
 
 ### Roadmap
