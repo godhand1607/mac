@@ -99,7 +99,7 @@ brew install m-cli
 # browsers
 brew install google-chrome --cask
 brew install brave-browser --cask
-# brew install safari-technology-preview --cask
+brew install safari-technology-preview --cask
 brew install firefox-developer-edition --cask
 
 # developer tools
