@@ -71,10 +71,11 @@ brew install m-cli
 ## Step 7: Install zsh themes and plugins
 1. Install [pure](https://github.com/sindresorhus/pure)
     ```sh
-    npm install --global pure-prompt
+    brew install pure
     ```
 2. Configure `pure` integration to `oh-my-zsh`
     - https://github.com/sindresorhus/pure#oh-my-zsh
+    - Apple Silicon: https://github.com/sindresorhus/pure/issues/584
 3. Install fonts
     ```sh
     brew install font-hack-nerd-font --cask
@@ -83,9 +84,9 @@ brew install m-cli
 4. Install iTerm Profile
     - Filename: `itermprofiles.json`
     - Guide: https://stackoverflow.com/questions/35211565/how-do-i-import-an-iterm2-profile
-5. Set iTerm advanced settings
-    - General -> Height of top and bottom margins in terminal panes = 12
-    - General -> Width of left and right margins in terminal panes = 20
+5. Set iTerm Preferences -> Appearance -> Panes
+    - Side margins = 12
+    - Top & bottom margin = 20
 6. Install zsh plugins
     - https://github.com/zsh-users/zsh-autosuggestions
     - https://github.com/zsh-users/zsh-syntax-highlighting
@@ -138,7 +139,7 @@ brew install spotify --cask
 brew install vlc --cask
 
 # gems
-gem install colorls
+sudo gem install colorls
 sudo gem install cocoapods
 ```
 
