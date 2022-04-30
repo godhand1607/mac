@@ -125,6 +125,9 @@ prompt pure
 source $(dirname $(gem which colorls))/tab_complete.sh
 alias cls="colorls"
 
+# gnupg - for signed commits
+export GPG_TTY=$(tty)
+
 # java via asdf
 . ~/.asdf/plugins/java/set-java-home.zsh
 

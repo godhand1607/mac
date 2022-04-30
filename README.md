@@ -86,7 +86,7 @@ brew install m-cli
     - Guide: https://stackoverflow.com/questions/35211565/how-do-i-import-an-iterm2-profile
 5. Set iTerm Preferences -> Appearance -> Panes
     - Side margins = 12
-    - Top & bottom margin = 20
+    - Top & bottom margins = 20
 6. Install zsh plugins
     - https://github.com/zsh-users/zsh-autosuggestions
     - https://github.com/zsh-users/zsh-syntax-highlighting
@@ -108,8 +108,11 @@ brew install postico --cask
 brew install mysqlworkbench --cask
 brew install ngrok --cask
 brew install postman --cask
+
+# developer tools - android and ios
+brew install android-studio --cask
 brew install gradle
-brew install android-sdk --cask
+brew install cocoapods
 
 # text editors
 brew install visual-studio-code --cask
@@ -140,7 +143,6 @@ brew install vlc --cask
 
 # gems
 sudo gem install colorls
-sudo gem install cocoapods
 ```
 
 ## Step 9: Install App Store Apps
@@ -158,9 +160,14 @@ mas install 409201541 # Pages
 
 ## Step 10: Configure git
 1. Setup ssh keys - https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-2. Copy `.gitconfig` and `.gitignore_global` files into home directory
-3. Update `.gitconfig/user.email`
-
+2. Setup signed commits - https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification
+    ```sh
+    brew install gnupg
+    brew install --cask gpg-suite
+    ```
+3. Copy `.gitconfig` and `.gitignore_global` files into home directory
+4. Update `.gitconfig/user.email`
+5. Update `.gitconfig/user.signingkey`
 
 ## Step 11: Configure editors
 1. Visual Studio Code
@@ -171,6 +178,16 @@ mas install 409201541 # Pages
 
 ## Step 12: Setup developer tools
 1. Setup java/android development tools
+    - Java 11
+        ```sh
+        brew install openjdk@11
+
+        # brew info openjdk@11
+        sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+
+        # in ~/.bashrc or ~/.zshrc
+        # export JAVA_HOME="$(brew --prefix openjdk@11)/libexec/openjdk.jdk/Contents/Home"
+        ```
     - Install tools
         ```sh
         # Install
@@ -182,11 +199,16 @@ mas install 409201541 # Pages
     - Set environment variables
         ```sh
         # ~/.zshrc
-        export ANDROID_HOME="/usr/local/share/android-sdk"
-        export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-        export PATH=$ANDROID_HOME/tools:$PATH
-        export PATH=$ANDROID_HOME/platform-tools:$PATH
-        export PATH=$ANDROID_HOME/build-tools/30.0.3:$PATH
+        # android
+        export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+        # avdmanager, sdkmanager
+        export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+        # adb, logcat
+        export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+        # emulator
+        export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+        # build tools
+        export PATH=$ANDROID_SDK_ROOT/build-tools/30.0.3:$PATH
         ```
 
 

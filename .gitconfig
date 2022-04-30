@@ -2,6 +2,7 @@
 [user]
     name = godhand1607
     email = <replace_email_here>
+    signingkey = <replace_signing_key>
 [color]
     # Enable colors in color-supporting terminals
     ui = auto
@@ -15,3 +16,5 @@
     tool = vscode
 [difftool "vscode"]
     cmd = code --wait --diff $LOCAL $REMOTE
+[commit]
+    gpgsign = true
