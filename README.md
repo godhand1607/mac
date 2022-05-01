@@ -13,6 +13,11 @@ I highly recommend to start fresh with a clean install of the latest version of 
     ```sh
     xcode-select --install
     ```
+- Install Rosetta
+    ```sh
+    # Ref: https://apple.stackexchange.com/questions/428768/on-apple-m1-with-rosetta-how-to-open-entire-terminal-iterm-in-x86-64-architec
+    softwareupdate --install-rosetta --agree-to-license
+    ```
 
 ## Step 3: Install [Homebrew](https://brew.sh/)
 - Get [Homebrew](https://brew.sh/) which is a package manager for macOS.
@@ -51,21 +56,16 @@ brew install m-cli
     ```sh
     asdf plugin-add nodejs
     asdf plugin-add python
-    asdf plugin-add java https://github.com/halcyon/asdf-java.git
     ```
 2. Install latest (stable) versions
     ```sh
-    asdf install nodejs latest:14
+    asdf install nodejs latest:16
     asdf install python latest
-    # Java 8 is required for Cordova/Ionic
-    asdf install java adoptopenjdk-8.0.275+1
     ```
 3. Set global plugin versions
     ```sh
     asdf global nodejs system
     asdf global python system
-    # Add to .zshcrc - . ~/.asdf/plugins/java/set-java-home.zsh
-    asdf global java adoptopenjdk-8.0.275+1
     ```
 
 ## Step 7: Install zsh themes and plugins
@@ -95,51 +95,65 @@ brew install m-cli
 
 
 ## Step 8: Install Casks
-```
+```sh
 # browsers
 brew install google-chrome --cask
 brew install brave-browser --cask
-brew install safari-technology-preview --cask
 brew install firefox-developer-edition --cask
+
+# browsers (optional)
+brew install safari-technology-preview --cask
+
+# text editors
+brew install visual-studio-code --cask
+brew install sublime-text --cask
 
 # developer tools
 brew install docker --cask
-brew install postico --cask
-brew install mysqlworkbench --cask
-brew install ngrok --cask
 brew install postman --cask
+brew install postico --cask
 
 # developer tools - android and ios
 brew install android-studio --cask
 brew install gradle
 brew install cocoapods
 
-# text editors
-brew install visual-studio-code --cask
-brew install sublime-text --cask
+# developer tools (optional)
+brew install mysqlworkbench --cask
+brew install ngrok --cask
 
 # utilities
-brew install kap --cask
-brew install 1password --cask
+brew install 1password --cask # TODO: Move to mas/appstore
+brew install authy --cask
 brew install omnidisksweeper --cask
+
+# utilities (optional)
+brew install kap --cask
 brew install teamviewer --cask
 brew install android-file-transfer --cask
+brew install balenaetcher --cask
 
 # communications
-brew install franz --cask
+brew install zoom --cask
+brew install keybase --cask
 brew install discord --cask
+
+# communications (optional)
+brew install whatsapp --cask
+brew install franz --cask
 brew install skype --cask
 
 # drivers
 brew tap homebrew/cask-drivers
 brew install logitech-g-hub --cask
 brew install blue-sherpa --cask
-sudo installer -pkg /usr/local/Caskroom/blue-sherpa/20200810/BlueSherpa-20200810.pkg -target /Applications
+sudo installer -pkg /opt/homebrew/Caskroom/blue-sherpa/20210729/BlueSherpa-20210729.pkg -target /Applications
 
 # etc
 brew install steam --cask
 brew install spotify --cask
 brew install vlc --cask
+brew install transmission --cask
 
 # gems
 sudo gem install colorls
@@ -180,6 +194,7 @@ mas install 409201541 # Pages
 1. Setup java/android development tools
     - Java 11
         ```sh
+        # Ref: https://stackoverflow.com/questions/64788005/java-jdk-for-the-apple-m1-chip
         brew install openjdk@11
 
         # brew info openjdk@11
@@ -242,11 +257,19 @@ mas install 409201541 # Pages
 
 
 ## Step 15: Email and Calendar
-
+- System Preferences -> Internet Accounts
+    - Add work accounts (All except Notes)
+    - Add personal account (Calendar only)
+- Calendar -> Accounts
+    - Choose necessary Delegations
 
 ### Roadmap
 1. Incorporate homebrew/bundle
     - NOTE: Initial Brewfile is included in the repo
+2. Specify other System Settings
+    - Battery
+    - Finder
+    - etc
 
 ### Credits
 - [laptop](https://github.com/thoughtbot/laptop)

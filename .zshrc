@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jamcando/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -106,38 +106,6 @@ alias etchosts="sudo code /etc/hosts"
 # iterm shell integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# Brew completions
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
-# "pure" theme - https://github.com/sindresorhus/pure#oh-my-zsh
-autoload -U promptinit; promptinit
-prompt pure
-
-# asdf
-. /usr/local/opt/asdf/asdf.sh
-
-# "colorls"
-source $(dirname $(gem which colorls))/tab_complete.sh
-alias cls="colorls"
-
-# gnupg - for signed commits
-export GPG_TTY=$(tty)
-
-# java via asdf
-. ~/.asdf/plugins/java/set-java-home.zsh
-
-# android
-export ANDROID_HOME="/usr/local/share/android-sdk"
-export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-export PATH=$ANDROID_HOME/tools:$PATH
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-export PATH=$ANDROID_HOME/build-tools/30.0.3:$PATH
-
 # ssh theme
 function tabc() {
    NAME=$1; if [ -z '$NAME' ]; then NAME='Default'; fi
@@ -157,9 +125,35 @@ function colorssh() {
 compdef _ssh tabc=ssh
 alias ssh="colorssh"
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/jamcando/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
-export PATH="/usr/local/sbin:$PATH"
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# "pure" theme - https://github.com/sindresorhus/pure#oh-my-zsh
+fpath+=/opt/homebrew/share/zsh/site-functions
+autoload -U promptinit; promptinit
+prompt pure
+
+# "colorls"
+source $(dirname $(gem which colorls))/tab_complete.sh
+alias cls="colorls"
+
+# gnupg - for signed commits
+export GPG_TTY=$(tty)
+
+# android
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+# avdmanager, sdkmanager
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+# adb, logcat
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+# emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+# build tools
+export PATH=$ANDROID_SDK_ROOT/build-tools/30.0.3:$PATH
+
+# # heroku autocomplete setup
+# HEROKU_AC_ZSH_SETUP_PATH=/Users/jamcando/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+# # tabtab source for packages
+# # uninstall by removing these lines
+# [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+# export PATH="/usr/local/sbin:$PATH"
