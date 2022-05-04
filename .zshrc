@@ -157,3 +157,15 @@ export PATH=$ANDROID_SDK_ROOT/build-tools/30.0.3:$PATH
 # # uninstall by removing these lines
 # [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 # export PATH="/usr/local/sbin:$PATH"
+
+# Auto activate/deactivated python virtual environments
+# https://dev.to/moniquelive/auto-activate-and-deactivate-python-venv-using-zsh-4dlm
+function python_venv() {
+  MYVENV=.venv
+  # when you cd into a folder that contains $MYVENV
+  [[ -d $MYVENV ]] && source $MYVENV/bin/activate > /dev/null 2>&1
+  # when you cd into a folder that doesn't
+  [[ ! -d $MYVENV ]] && deactivate > /dev/null 2>&1
+}
+autoload -U add-zsh-hook
+add-zsh-hook chpwd python_venv
