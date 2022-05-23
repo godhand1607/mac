@@ -146,8 +146,6 @@ brew install skype --cask
 # drivers
 brew tap homebrew/cask-drivers
 brew install logitech-g-hub --cask
-brew install blue-sherpa --cask
-sudo installer -pkg /opt/homebrew/Caskroom/blue-sherpa/20210729/BlueSherpa-20210729.pkg -target /Applications
 
 # etc
 brew install steam --cask
@@ -161,12 +159,15 @@ sudo gem install colorls
 
 ## Step 9: Install App Store Apps
 ```sh
-mas install 425955336 # Skitch
-mas install 1037126344 # Apple Configurator 2
-mas install 803453959 # Slack
 mas install 497799835 # Xcode
+mas install 1037126344 # Apple Configurator 2
+
+mas install 803453959 # Slack
+
+mas install 425955336 # Skitch
 mas install 441258766 # Magnet
 mas install 425424353 # The Unarchiver
+
 mas install 409203825 # Numbers
 mas install 409183694 # Keynote
 mas install 409201541 # Pages
